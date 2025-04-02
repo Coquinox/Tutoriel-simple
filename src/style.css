@@ -1,0 +1,193 @@
+/* Importation d'une police fun depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #333;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Titre */
+header h1 {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+#word-container,
+#keyboard button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+/* Conteneur principal */
+#game-container {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+/* Zone du pendu */
+#hangman-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#hangman-drawing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+}
+
+#hangman-canvas {
+    border: 2px solid black;
+    background: white;
+}
+
+#error-count {
+    font-size: 1.5rem;
+    color: #ff4757;
+}
+
+/* Mot à deviner */
+#word-container {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 8px;
+    margin: 20px 0;
+}
+
+/* Clavier */
+#keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+#keyboard button {
+    background: #1e90ff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+#keyboard button:hover {
+    background: #3742fa;
+    transform: scale(1.1);
+}
+
+/* Désactiver une lettre déjà jouée */
+#keyboard button:disabled {
+    background: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+/* Message de victoire/défaite */
+#message {
+    font-size: 1.8rem;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Animation des lettres quand on gagne */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.win-animation span {
+    display: inline-block;
+    animation: bounce 0.5s ease-in-out infinite alternate;
+}
+
+/* Animation de secousse du pendu */
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(5deg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+}
+
+.shake {
+    animation: shake 0.3s ease-in-out 3;
+}
+
+/* Transition fluide pour le bouton Rejouer */
+#restart-button {
+    transition: transform 0.2s, background 0.3s;
+}
+
+#restart-button:hover {
+    transform: scale(1.1);
+}
+
+/* Controls */
+#controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#restart-button {
+    background: #ff4757;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#restart-button:hover {
+    background: #e84118;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #fff;
+}

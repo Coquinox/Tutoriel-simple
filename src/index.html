@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu du pendu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Le jeu du pendu</h1>
+    </header>
+    <main id="game-container">
+        <section>
+            <div id="hangman-container">
+                <div id="error-count"></div>
+                <div id="hangman-drawing">
+                    <canvas id="hangman-canvas" width="200" height="250"></canvas>
+                </div>
+            </div>
+            <div id="word-container"></div>
+        </section>
+        <section>
+            <div id="keyboard"></div>
+        </section>
+        <div id="message"></div>
+        <div id="controls">
+            <button id="restart-button">Rejouer</button>
+        </div>
+    </main>
+    <footer>
+        <p>Un jeu simple du pendu - Créé par Corentin</p>
+    </footer>
+    <noscript>
+        <p>⚠️ JavaScript est désactivé. Activez-le pour jouer au pendu.</p>
+    </noscript>
+    
+    <script src="script.js" defer></script>
+</body>
+</html>
